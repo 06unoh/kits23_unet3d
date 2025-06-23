@@ -71,7 +71,9 @@ Test Accuracy: 65.44%
 
 예측 결과 예시:
 
-![샘플 예측 결과](images/work4_con1.png)  (images/work4_con2.png)  (images/work4_con3.png)
+![샘플 예측 결과1](images/work4_con1.png)  
+![샘플 예측 결과1](images/work4_con2.png)  
+![샘플 예측 결과1](images/work4_con3.png)
 
 ---
 소개 페이지: 
