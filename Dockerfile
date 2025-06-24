@@ -13,7 +13,14 @@ RUN pip install --no-cache-dir torch==2.6.0+cu124 torchvision==0.21.0+cu124 \
 
 RUN pip install --no-cache-dir matplotlib==3.10.0 numpy==2.0.2
 
+# 데이터셋 세팅
+RUN apt-get update && apt-get install -y git
+RUN git clone https://github.com/neheller/kits23.git
+WORKDIR /datasets/kits23
+RUN pip install --no-cache-dir -e .
+
 # 현재 프로젝트 전체 복사
+WORKDIR /app
 COPY . .
 
 # 메인 실행 명령 → python main.py 실행

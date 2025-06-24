@@ -7,6 +7,7 @@ from utils.visualize import visualize_prediction
 from utils.transform import get_test_tf, get_train_tf 
 
 import os
+import subprocess
 import torch
 from torch import optim
 from monai.losses import DiceCELoss
@@ -17,7 +18,11 @@ from monai.data import DataLoader
 train_tf=get_train_tf()
 test_tf=get_test_tf()
 
-path='./datasets/kits23/dataset/'
+if not os.path.exists('./datasets/kits23/cases/imaging.nii.gz'):
+    print("데이터가 없습니다. 다운로드를 시작합니다...")
+    subprocess.run(["kits23_download_data"], check=True)
+
+path='./datasets/kits23/'
 all_path=os.listdir(path)
 all_path=[os.path.join(path, filename) for filename in all_path if 'case_' in filename]
 
