@@ -8,16 +8,12 @@ from utils.transform import get_test_tf, get_train_tf
 from utils.kits23_download import get_dataset
 
 import os
-import subprocess
 import torch
 from torch import optim
 from monai.losses import DiceCELoss
 from monai.metrics import DiceMetric
 from sklearn.model_selection import train_test_split
 from monai.data import DataLoader
-
-train_tf=get_train_tf()
-test_tf=get_test_tf()
 
 get_dataset()
 
@@ -30,6 +26,9 @@ masks_path=[os.path.join(filename, 'segmentation.nii.gz') for filename in all_pa
 
 train_files, temp_files, train_masks, temp_masks=train_test_split(volumes_path, masks_path, test_size=0.2, random_state=42, shuffle=True)
 val_files, test_files, val_masks, test_masks=train_test_split(temp_files, temp_masks, test_size=0.5, random_state=42, shuffle=True)
+
+train_tf=get_train_tf()
+test_tf=get_test_tf()
 
 trainset=ImageDataset(train_files, train_masks, train_tf)
 valset=ImageDataset(val_files, val_masks, test_tf)
