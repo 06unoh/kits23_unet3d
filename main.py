@@ -5,6 +5,7 @@ from utils.test import test
 from utils.evaluate import evaluate
 from utils.visualize import visualize_prediction 
 from utils.transform import get_test_tf, get_train_tf 
+from utils.kits23_download import get_dataset
 
 import os
 import subprocess
@@ -18,9 +19,7 @@ from monai.data import DataLoader
 train_tf=get_train_tf()
 test_tf=get_test_tf()
 
-if not os.path.exists('./datasets/kits23/cases/imaging.nii.gz'):
-    print("데이터가 없습니다. 다운로드를 시작합니다...")
-    subprocess.run(["kits23_download_data"], check=True)
+get_dataset()
 
 path='./datasets/kits23/'
 all_path=os.listdir(path)
