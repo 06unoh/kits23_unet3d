@@ -57,13 +57,13 @@ docker run --rm kits23-unet3d
 KiTS23  
 KiTS23 데이터셋은 3D CT 의료 영상으로 총 489명의 환자 데이터를 포함하고 있습니다. 이 데이터셋은 신장, 종양 부위를 분할(segmentation)하는 데 적합합니다.
   
-데이터셋은 별도의 준비 없이, 실행 시 `torchvision` 라이브러리를 통해 자동으로 다운로드됩니다.
+데이터셋은 공식 깃허브`https://github.com/neheller/kits23`를 통해 다운로드 할 수 있습니다.
 
 ---
 
 ## 🔹 결과
 
-50 에포크 학습 후, 정확도:
+50 에포크 학습 후, 결과:
 
 ```
 Test Dice Score: 72.96%
