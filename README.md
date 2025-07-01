@@ -63,5 +63,5 @@ Test Dice Score: 72.96%
 ![샘플 예측 결과3](images/work4_con3.png)
 
 ---
-📄 [Project Details](https://portfolio-unoh.site/work4)
-06unoh
+📄 [Work Details](https://portfolio-unoh.site/work4)  
+🛠 Developed by 06unoh 
